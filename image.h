@@ -11,6 +11,17 @@ public:
 		std::cout << "freeing pixel memory.\n";
 		delete[] pixels;
 	}
+
+	bool ValidateImage() const
+	{
+		if (m_columns <= 1024 && m_rows <= 1024) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	const uint16_t m_rows;
 	const uint16_t m_columns;
 	uint8_t* pixels; // max 1k x 1k image
